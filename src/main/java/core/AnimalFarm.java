@@ -35,5 +35,6 @@ public class AnimalFarm extends Farm {
     public boolean farmOptions() {
         boolean quit = false;
         
+        return false;
     }
 }

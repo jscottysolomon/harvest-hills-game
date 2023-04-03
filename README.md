@@ -14,3 +14,7 @@ I would use the Decorator pattern to add new affinities to farmers, animals, and
 ## Mediator Pattern:
 
 I would use the Mediator pattern to handle the simulation's tick-based events. This pattern would help to centralize the control of events and manage the interdependencies between different components.
+
+# Requirements
++ Gradle
++ Java JDK 15 or higher
