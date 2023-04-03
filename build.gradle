@@ -4,6 +4,8 @@ plugins {
     id "checkstyle"
 }
 
+apply plugin: 'java'
+
 repositories {
     mavenCentral() 
     jcenter()
@@ -14,8 +16,19 @@ dependencies {
     implementation files('cls/')
 }
 
+task startGame(type: JavaExec) {
+  group 'Gameplay'
+  description 'Starts a standard game of Harvest Hills'
+
+  classpath = sourceSets.main.runtimeClasspath
+
+  main = 'core.Main'
+  standardInput = System.in
+}
+
 application {
-    mainClass = 'main.java.core.Driver' 
+    // mainClass = 'main.java.core.Driver' 
+    mainClass = 'core.Main' 
 }
 
 // apply plugin: 'checkstyle'
