@@ -16,6 +16,7 @@ dependencies {
     implementation files('cls/')
 }
 
+
 task startGame(type: JavaExec) {
   group 'Gameplay'
   description 'Starts a standard game of Harvest Hills'
@@ -27,15 +28,13 @@ task startGame(type: JavaExec) {
 }
 
 application {
-    // mainClass = 'main.java.core.Driver' 
     mainClass = 'core.Main' 
 }
 
-// apply plugin: 'checkstyle'
 checkstyle {
-  // Keep checkstyle a little quieter
   ignoreFailures = true
   showViolations = false
+  sourceSets = []
 }
 
 tasks.withType(Checkstyle) {
