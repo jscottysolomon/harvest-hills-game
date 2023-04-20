@@ -6,10 +6,9 @@ import java.util.Random;
  * Represents an Animal for the Animal Farm.
  */
 public abstract class Animal {
-    protected final int MAXIMUM_AGE = 14;
+    protected static final int MAXIMUM_AGE = 14;
     protected String name;
     protected String productName;
-    protected String animalType;
     protected int age;
     protected int sellPrice;
     protected boolean isSick;
@@ -18,6 +17,7 @@ public abstract class Animal {
     protected int productionSellPrice;
     protected int purchasePrice;
     private int productionDays;
+    private Random random;
 
     /**
      * Basic constructor for animal 
@@ -33,6 +33,7 @@ public abstract class Animal {
         productionReady = false;
         isDead = false;
         productionDays = 0;
+        random = new Random();
     }
 
     public int getPurchasePrice() {
@@ -89,8 +90,6 @@ public abstract class Animal {
         age++;
 
         productionReady = (age > 2 && (productionDays++ % 2 == 0) && !isSick);
-
-        Random random = new Random();
 
         int randomNum = random.nextInt();
         randomNum = randomNum % 20;

@@ -4,18 +4,12 @@ import java.util.ArrayList;
 
 public abstract class Farm {
     protected ArrayList<FarmHand> farmHands;
-    protected String farmName;
     protected String endMessage;
-    protected int farmerCount;
     protected int funds;
     protected int dayCount;
-    protected boolean isDay;
 
     public Farm() {
-        farmName = "Harvest Hills";
-        farmerCount = 0;
         funds = 6000;
-        isDay = true;
         endMessage = null;
         farmHands = new ArrayList<>();
     }
