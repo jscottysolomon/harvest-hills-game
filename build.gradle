@@ -27,6 +27,10 @@ task startGame(type: JavaExec) {
   standardInput = System.in
 }
 
+// task checkStyle(type: Checkstyle) {
+//   sourceSets = [sourceSets.main]
+// }
+
 application {
     mainClass = 'core.Main' 
 }
@@ -34,7 +38,7 @@ application {
 checkstyle {
   ignoreFailures = true
   showViolations = false
-  sourceSets = []
+  // sourceSets = []
 }
 
 tasks.withType(Checkstyle) {

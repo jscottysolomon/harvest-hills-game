@@ -1,39 +1,28 @@
 package core;
 
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.lang.Thread;
 
 public class Main{
-    public static void main(String[] args){
-        System.out.println("Testing setup...!");
+    public static void main(String[] args) {
+
         Mediator mediator = new Mediator();
 
         boolean exit = false;
-        Scanner scan = new Scanner(System.in, "UTF-8");
-        String input = null;
 
         mediator.createGame();
 
         while(!exit){
+            mediator.cycle();
 
-            mediator.updateGame();
-            System.out.println(mediator.menuOptions());
-
-            try{
-                input = scan.nextLine();
-            } catch(NoSuchElementException e) {
-                System.out.println("error\n");
+            if(mediator.endGame()) {
                 exit = true;
+            } else {
+                try {
+                    Thread.sleep(10000);
+                } catch(Exception e) {
+                    e.printStackTrace();
+                }
             }
-
-            if(input.equalsIgnoreCase("QUIT") || input.equalsIgnoreCase("EXIT")) {
-                exit = true;
-            }
-
-            mediator.handleInput(input);
-
         }
-
-        scan.close();
     }    
 }

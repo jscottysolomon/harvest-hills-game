@@ -11,6 +11,8 @@ I would use the Factory pattern to create new farms when the capacity of the exi
 
 I would use the Decorator pattern to add new affinities to farmers, animals, and crops. This pattern would help to dynamically add new functionalities to the objects without modifying their core functionalities.
 
+## Singleton Pattern
+
 ## Mediator Pattern:
 
 I would use the Mediator pattern to handle the simulation's tick-based events. This pattern would help to centralize the control of events and manage the interdependencies between different components.
