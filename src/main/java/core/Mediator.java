@@ -14,7 +14,16 @@ public class Mediator {
     }
 
     public void createGame() {
-        farm = new AnimalFarm();
+        long currentTimeMillis = System.currentTimeMillis();
+        FarmFactory farmFactory = new FarmFactory();
+        
+        if(currentTimeMillis % 2 == 0) {
+            farm = farmFactory.getAnimalFarm();
+            System.out.println("Starting animal farm!");
+        } else {
+            farm = farmFactory.getCropFarm();
+            System.out.println("Starting crop farm!");
+        }
     }
 
     public boolean endGame() {

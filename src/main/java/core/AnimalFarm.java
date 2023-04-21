@@ -13,7 +13,9 @@ public class AnimalFarm extends Farm {
         super();
         sickAnimalCount = 0;
         animals = new ArrayList<Animal>();
-        animalMarket = new AnimalMarket();
+
+        MarketFactory marketFactory = new MarketFactory();
+        animalMarket = marketFactory.getAnimalMarke();
     }
 
     public void addAnimal(ArrayList<Animal> animalList) {

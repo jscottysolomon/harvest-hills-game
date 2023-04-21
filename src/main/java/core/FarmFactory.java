@@ -5,7 +5,9 @@ public class FarmFactory {
     FarmFactory() {}
 
     public Farm getCropFarm() {
-        return null;
+        CropFarm farm = new CropFarm();
+
+        return farm;
     }
 
     public Farm getAnimalFarm() {
