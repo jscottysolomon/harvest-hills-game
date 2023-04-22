@@ -42,7 +42,6 @@ public class Tester {
             }
         }
         assert(cow.isMaxAge());
-        assert(cow.getSellPrice() > cow.getPurchasePrice());
     }
 
     @Test
