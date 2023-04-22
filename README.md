@@ -1,6 +1,8 @@
 # Harvest Hills Game
 This is a game simulation in which a farm is created and crops are grown or animals are reared. The game runs on a cycle-based system, with each cycle consisting of a day and a night.
 
+[Link to screencast](https://github.com/jscottysolomon/harvest-hills-game/blob/main/src/resources/git_example.mp4)
+
 ## Running
 
 ```
