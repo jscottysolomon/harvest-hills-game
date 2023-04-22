@@ -10,7 +10,6 @@ public class Mediator {
         farm.updateFarm();
         farm.cycle();
         System.out.println("***********************");
-        
     }
 
     public void createGame() {
@@ -34,4 +33,5 @@ public class Mediator {
             return false;
         }
     }
+
 }

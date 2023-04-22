@@ -29,7 +29,7 @@ public class Crop {
             isDestroyed = true;
         }
 
-        if(age >= daysTillGrown) {
+        if(age >= daysTillGrown && !isDestroyed) {
             isFullyGrown = true;
         }
     }

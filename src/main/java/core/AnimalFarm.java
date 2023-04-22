@@ -105,7 +105,7 @@ public class AnimalFarm extends Farm {
             endMessage = "Over half your animals are sick. No one's going to buy them anymore...";
         }
 
-        if(dayCount > 30) {
+        if(dayCount > 15) {
             endMessage = "The season has ended.";
         }
 

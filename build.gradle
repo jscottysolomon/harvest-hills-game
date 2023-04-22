@@ -5,6 +5,7 @@ plugins {
 }
 
 apply plugin: 'java'
+apply plugin: 'jacoco'
 
 repositories {
     mavenCentral() 
@@ -27,9 +28,34 @@ task startGame(type: JavaExec) {
   standardInput = System.in
 }
 
-// task checkStyle(type: Checkstyle) {
-//   sourceSets = [sourceSets.main]
-// }
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+}
+
+
+jacoco {
+    toolVersion = "0.8.8"
+    // reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+}
+
+test {
+    exclude '**/BlackBoxGiven.class'
+}
+
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+
+    // set the output directory for the coverage report
+    // this will generate the report in the build/reports/jacoco directory
+    // reportsDir file("${project.buildDir}/reports/tests")
+}
+
 
 application {
     mainClass = 'core.Main' 
@@ -50,6 +76,16 @@ tasks.withType(Checkstyle) {
 checkstyle {
     toolVersion = "8.8"
 }
+
+test {
+    useJUnit {
+        version '4.12'
+    }
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
 
 ///////////////////////////////////////////////////////////////////////
 // Configure SpotBugs

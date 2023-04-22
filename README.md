@@ -73,3 +73,7 @@ I only had one issue. I used a generic type for a farms product (animal or crop)
 I did not leave any issues found by Spotbugs. See below for a screenshot of the report. 
 
 ![Image](./src/resources/spotbugs.png)
+
+## Unit Tests
+Below is a screenshot that shows the results of my unit testing.
+![Image](./src/resources/unit_tests.png)
