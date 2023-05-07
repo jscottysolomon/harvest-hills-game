@@ -1,7 +1,6 @@
 # Harvest Hills Game
-This is a game simulation in which a farm is created and crops are grown or animals are reared. The game runs on a cycle-based system, with each cycle consisting of a day and a night.
+This is an automated text-based game simulation in which a farm is created and crops are grown or animals are reared. The game runs on a cycle-based system, with each cycle consisting of a day and a night.
 
-[Link to screencast](https://github.com/jscottysolomon/harvest-hills-game/blob/main/src/resources/git_example.mp4)
 
 ## Running
 
@@ -14,7 +13,7 @@ gradle startGame --console=plain
 
 There are two types of farms: anaimal farms and crop farms. In the morning (day) cycle, crop/animals are checked on. Any produce/production is sold. In the night portion of the cycle, the farmer goes to the market, where they can hire farm hands or crops/animals. Financial decisions (when farmhands are hired, if crops/animals are bought each night) occur at random each night. Once the day/night cycle finishes, the farm updates for the next cycle. A check is made for whether exit conditions are met. Crop/animals are also updated an random events (crops/animals dying) are calculated.
 
-## Requirements met
+## Features
 + New world starts with one farm 
     + Only one farm is ever used at a time
 + Farms are of different types 
@@ -62,20 +61,3 @@ The state pattern is used to facilate changes that happen during game cycles.
 When animals/crops are updated at the end of the cyle, they have a chance of dying and changing their toString for when they are checked on the next morning. The state pattern is also used to track age updates and sell conditions. 
 
 The farm object updates at the end of every game cycle and creates an endMessage do display to the user if an exit condition is met.
-
-## **Checkstyle**
-Below is a summary of my checkstyle report 
-![Image](./src/resources/checkstyle.png)
-
-I only had one issue. I used a generic type for a farms product (animal or crop), and entitled the generic \<Product>, but I recieved an error when I had it capitalized but also recieved an error when I renamed the generic to \<product> that it should be uppercase, so I just left ther variable as is. See below for a screenshot of the issue.
-![Image](./src/resources/Purchase.png)
-
-## **Spotbugs**
-
-I did not leave any issues found by Spotbugs. See below for a screenshot of the report. 
-
-![Image](./src/resources/spotbugs.png)
-
-## Unit Tests
-Below is a screenshot that shows the results of my unit testing.
-![Image](./src/resources/unit_tests.png)
